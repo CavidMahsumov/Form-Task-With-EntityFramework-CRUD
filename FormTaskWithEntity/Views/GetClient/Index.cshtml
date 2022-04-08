@@ -1,0 +1,56 @@
+﻿
+@model IEnumerable<FormTaskWithEntity.Entities.Client>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        .submit {
+            width: 25%;
+            height: 10vh;
+            background-color: green;
+            width: 10em;
+            height: 2em;
+        }
+        button {
+            margin-left: 10em;
+            margin-top: 2em;
+            width: 10em;
+            height: 2em;
+        }
+        body{
+            background-color:cornflowerblue
+        }
+
+
+      
+
+    </style>
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+        <ol>
+            <li>Id : @item.ID</li>
+        </ol>
+    }
+    <form asp-controller="GetClient">
+        @Html.Label("Input Element ID : ");
+        @Html.TextBox("Id", ViewData["Id"]);
+        <button asp-action="GetClient" type="submit">Get Client</button>
+    </form>
+
+    <form asp-controller="ShowAllClient">
+
+        <button asp-action="GoBack" type="submit" id="submit" class="submit">Go Back</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model FormTaskWithEntity.Entities.Client
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetClient</title>
+    <style>
+        button {
+            margin-left: 10em;
+            margin-top: 2em;
+             width:10em;
+            height:2em;
+        }
+        body{
+            background-color:cornflowerblue
+        }
+        
+     
+    </style>
+</head>
+<body>
+    <ol>
+        <li>Id : @Model.ID</li>
+        <li>Name : @Model.Name</li>
+        <li>Surname : @Model.Surname</li>
+        <li>Age : @Model.Age</li>
+        <li>Salary : @Model.Salary</li>
+    </ol>
+    <form asp-controller="GetClient">
+
+        <button asp-action="GoBack" type="submit" id="submit" class="submit">Go Back</button>
+    </form>
+</body>
+</html>

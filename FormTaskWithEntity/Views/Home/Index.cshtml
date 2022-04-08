@@ -1,0 +1,104 @@
+﻿@model IEnumerable<FormTaskWithEntity.Entities.Client>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: cornflowerblue
+        }
+        button{
+            margin-left:10em;
+            margin-top:2em
+        }
+            button, button::after {
+                width: 8em;
+                height: 2em;
+                font-size: 36px;
+                font-family: 'Bebas Neue', cursive;
+                background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+                border: 0;
+                color: #fff;
+                letter-spacing: 3px;
+                line-height: 88px;
+                box-shadow: 6px 0px 0px #00E6F6;
+                outline: transparent;
+                position: relative;
+            }
+
+            button::after {
+                --slice-0: inset(50% 50% 50% 50%);
+                --slice-1: inset(80% -6px 0 0);
+                --slice-2: inset(50% -6px 30% 0);
+                --slice-3: inset(10% -6px 85% 0);
+                --slice-4: inset(40% -6px 43% 0);
+                --slice-5: inset(80% -6px 5% 0);
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+                text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+                clip-path: var(--slice-0);
+            }
+
+            button:hover::after {
+                animation: 1s glitch;
+                animation-timing-function: steps(2, end);
+            }
+
+
+
+
+        .div1 {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10%;
+        }
+
+        .btn1 {
+            width: 25%;
+            height: 10vh
+        }
+
+        .btn2 {
+            width: 25%;
+            height: 10vh
+        }
+
+        .btn3 {
+            width: 25%;
+            height: 10vh
+        }
+
+        .btn4 {
+            width: 25%;
+            height: 10vh
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+
+        <form asp-controller="Home">
+            <button asp-action="AddClient" id="submit" type="submit" class="btn1">Add Client</button>
+            <button asp-action="RemoveClient" id="submit" type="submit" class="btn2">Remove Client</button>
+            <button asp-action="UpdateClient" id="submit" type="submit" class="btn3">Update Client</button>
+            <button asp-action="GetClient" id="submit" type="submit" class="btn4">Get Client</button>
+            <button asp-action="ShowAllClient" id="submit" type="submit" class="btn4">Show All Client</button>
+        </form>
+    </div>
+
+</body>
+</html>
